@@ -21,7 +21,7 @@ local.properties
 *.ap_
 *.dex
 *.class
-*.jar
+# *.jar  # 주석 처리: gradle-wrapper.jar은 필요함
 *.aar
 
 # OS specific

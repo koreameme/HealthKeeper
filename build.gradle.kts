@@ -4,3 +4,10 @@ plugins {
     id("com.android.library") version "8.1.0" apply false
     id("org.jetbrains.kotlin.android") version "1.9.0" apply false
 }
+
+tasks.register("wrapper") {
+    val gradleVersion = "8.1"
+    val distribution = "bin"
+    
+    println("Creating gradle wrapper...")
+}
