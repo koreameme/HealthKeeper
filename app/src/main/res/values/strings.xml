@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HealthKeeper</string>
+    <string name="daily_checkin">일일 체크인</string>
+    <string name="mood_tracking">기분 추적</string>
+    <string name="breathing_exercise">호흡 운동</string>
+    <string name="habit_tracker">습관 추적</string>
+</resources>

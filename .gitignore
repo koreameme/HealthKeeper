@@ -1,0 +1,46 @@
+
+# Ignore Gradle files
+.gradle/
+build/
+.gradletasknamecache
+gradle-app.setting
+
+# Ignore Kotlin/Java IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.classpath
+.project
+.settings/
+
+# Ignore build outputs
+local.properties
+*.apk
+*.ap_
+*.dex
+*.class
+*.jar
+*.aar
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+*.swo
+
+# Testing
+.coverage/
+*.lcov
+
+# Node modules (if using any build tools)
+node_modules/
