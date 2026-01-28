@@ -17,7 +17,7 @@ out/
 
 # Ignore build outputs
 local.properties
-*.apk
+# *.apk  # 주석 처리: Release APK는 필요함
 *.ap_
 *.dex
 *.class
