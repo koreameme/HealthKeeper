@@ -19,39 +19,33 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v2
-        with:
-          api-level: 34
-          ndk: '25.1.8937393'
-          cmake: '3.22.1'
-
-      - name: Create local.properties
-        run: |
-          echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
-
       - name: Make gradlew executable
         run: chmod +x gradlew
 
       - name: Build Release APK
-        run: ./gradlew assembleRelease -x lint --stacktrace
+        run: ./gradlew assembleRelease
 
-      - name: Upload Artifacts
+      - name: Upload Release APK
         uses: actions/upload-artifact@v4
         if: success()
         with:
-          name: apk-release
+          name: app-release
           path: app/build/outputs/apk/release/app-release.apk
 
-      - name: Create Release
+      - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         if: success()
         with:
           tag_name: v1.0.1
-          files: app/build/outputs/apk/release/app-release.apk
+          files: |
+            app/build/outputs/apk/release/app-release.apk
           body: |
             # HealthKeeper v1.0.1
             
-            자동 빌드 릴리스
+            ✅ 자동 빌드 완료
+            
+            ## 설치 방법
+            1. APK 다운로드
+            2. 휴대폰에 설치
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
