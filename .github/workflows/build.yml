@@ -19,6 +19,14 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
+      - name: Download gradle-wrapper.jar
+        run: |
+          mkdir -p gradle/wrapper
+          cd gradle/wrapper
+          wget -q https://services.gradle.org/distributions/gradle-8.1.jar -O gradle-wrapper.jar || curl -L https://services.gradle.org/distributions/gradle-8.1.jar -o gradle-wrapper.jar
+          ls -la gradle-wrapper.jar
+          cd ../..
+
       - name: Make gradlew executable
         run: chmod +x gradlew
 
